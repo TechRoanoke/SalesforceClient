@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Literals.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="FieldDescription.cs" />
     <Compile Include="ForceClientExtensions.cs" />
