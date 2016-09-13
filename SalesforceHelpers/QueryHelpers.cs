@@ -71,7 +71,7 @@ namespace Salesforce.Helpers
                 throw new InvalidOperationException(msg);
             }
 
-            return new QueryExprEquals { LHS = f, RHS = value.ToString().ToUpper() };
+            return new QueryExprEquals { LHS = f, RHS = Literals.ToSoql(value) };
         }
         public QueryExpr Equals(string columnName, string value)
         {
@@ -100,7 +100,7 @@ namespace Salesforce.Helpers
                 }
                 value = match;
             }
-            return new QueryExprEquals { LHS = f, RHS = "'" + value + "'" };
+            return new QueryExprEquals { LHS = f, RHS = Literals.ToSoql(value) };
         }
     }
 

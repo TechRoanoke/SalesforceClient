@@ -26,6 +26,11 @@ namespace Salesforce.Helpers
 
         public static ConnectionString FromConnectionString(string cx)
         {
+            if (string.IsNullOrWhiteSpace(cx))
+            {
+                throw new ArgumentNullException("Connection string is missing");
+            }
+
             var parts = cx.Split(';');
             if (parts.Length != 6 || parts[0] != Cookie)
             {
